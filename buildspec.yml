@@ -5,13 +5,16 @@ phases:
   install:
     commands:
       - pipenv sync --dev
+  pre_build:
+    commands:
+      - export PATH=`pipenv --venv`/bin:$PATH
   build:
     commands:
       - echo Running Python Tests
-      - "`pipenv --venv`/bin/python coverage run --omit features/steps/steps.py --source='.' -m behave"
+      - coverage run --omit features/steps/steps.py --source='.' -m behave
   post_build:
     commands:
-      - "`pipenv --venv`/bin/python coverage report > code_coverage.txt"
+      - coverage report > code_coverage.txt
       - pipenv uninstall --all-dev
       - rm `pipenv --venv`/lib/python3.6/site-packages/boto*
       - rm `pipenv --venv`/lib/python3.6/site-packages/pip*
@@ -23,5 +26,5 @@ artifacts:
   files:
     - code_coverage.txt
     - '**/*.py'
-    - '`pipenv --venv`/lib/python3.6/site-packages/**'
+    - '`pipenv --venv`/lib/python3.6/site-packages/**/*'
   discard-paths: yes
