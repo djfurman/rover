@@ -1,7 +1,7 @@
-import rover
+from rover import rover
 
 
-def lambda_function(event, context):
-    response = rover(event.get("username"))
-    print(response)
+def lambda_handler(event, context):
+    response = rover(event["body"].get("username"))
+    print(response.json())
     return response
