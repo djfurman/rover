@@ -5,7 +5,7 @@ phases:
   install:
     commands:
       - pipenv sync --dev
-  pre-build:
+  pre_build:
     commands:
       - echo Setting pipenv shell command
       - pipenv shell
