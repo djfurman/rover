@@ -1,0 +1,22 @@
+---
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - apt-get install pipenv
+      - pipenv sync --dev
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Running Python Tests
+      - coverage run --omit features/steps/steps.py --source='.' -m behave
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - coverage report > code_coverage.txt
+artifacts:
+  files:
+    - code_coverage.txt
+    - lambda_function.py
+    - rover.py
