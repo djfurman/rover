@@ -10,6 +10,7 @@ behave = "*"
 [dev-packages]
 black = "*"
 "flake8" = "*"
+coverage = "*"
 
 [requires]
 python_version = "3.6"
