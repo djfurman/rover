@@ -5,17 +5,27 @@ phases:
   install:
     commands:
       - pipenv sync --dev
+  pre-build:
+    commands:
+      - echo Setting pipenv shell command
+      - pipenv shell
   build:
     commands:
-      - echo Build started on `date`
       - echo Running Python Tests
       - coverage run --omit features/steps/steps.py --source='.' -m behave
   post_build:
     commands:
-      - echo Build completed on `date`
       - coverage report > code_coverage.txt
+      - pipenv uninstall --all-dev
+      - rm `pipenv --venv`/lib/python3.6/site-packages/boto*
+      - rm `pipenv --venv`/lib/python3.6/site-packages/pip*
+      - rm `pipenv --venv`/lib/python3.6/site-packages/setuptools*
+      - rm `pipenv --venv`/lib/python3.6/site-packages/easy_install*
+      - rm `pipenv --venv`/lib/python3.6/site-packages/wheel*
+      - echo Build packaged on `date`
 artifacts:
   files:
     - code_coverage.txt
-    - lambda_function.py
-    - rover.py
+    - '**/*.py'
+    - '`pipenv --venv`/lib/python3.6/site-packages/*'
+  discard-paths: yes
