@@ -16,8 +16,8 @@ phases:
     commands:
       - coverage report > code_coverage.txt
       - pipenv uninstall --all-dev
-      - pipenv uninstall boto3 easy_install pip six wheel
-      - "cp -R `pipenv --venv`/lib/python3.6/site-packages/ `pwd`/"
+      - "cp -R `pipenv --venv`/lib/python3.6/site-packages/* `pwd`/"
+      - rm -rf boto* easy_install* pip* six* wheel*
       - rm -rf features
       - echo Build packaged on `date`
 artifacts:
