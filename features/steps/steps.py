@@ -13,9 +13,14 @@ def step_impl(context):
     context.response = lambda_handler(event, {})
 
 
+@then(u'that status code should be "{status_code}"')
+def step_impl(context, status_code):
+    assert context.response.status_code == 200
+
+
 @then(u"a json object should be returned")
 def step_impl(context):
-    assert type(context.response) == "dict"
+    assert type(context.response.json()) == type(dict())
 
 
 @then(u"login should equal the github user")
