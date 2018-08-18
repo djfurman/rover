@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo Setting pipenv shell command
-      - pipenv shell
+      - source `pipenv --venv`/bin/activate
   build:
     commands:
       - echo Running Python Tests
