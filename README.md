@@ -22,3 +22,20 @@ This over simple app needs a comparable build process to much more sophisticated
 - AWS CodePipeline
 - AWS CodeDeploy
 - AWS Lambda
+
+# Installation
+
+1. Clone this repository
+1. Run `pipenv sync --dev`
+1. Run `pipenv shell`
+
+## Testing
+
+This project leverages the gherkin style testing implementation offered by the excellent [python `behave`](https://pypi.org/project/behave/) library.
+
+To execute the tests, run `behave`.
+
+### Code Coverage
+
+1. To execute the tests with code coverage run `coverage run --omit features/steps/steps.py --source='.' -m behave`
+1. Examine the coverage with `coverage report`
