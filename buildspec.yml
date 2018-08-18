@@ -4,7 +4,6 @@ version: 0.2
 phases:
   install:
     commands:
-      - apt-get install pipenv
       - pipenv sync --dev
   build:
     commands:
