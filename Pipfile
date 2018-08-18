@@ -5,12 +5,12 @@ name = "pypi"
 
 [packages]
 requests = "*"
-behave = "*"
 
 [dev-packages]
+behave = "*"
 black = "*"
-"flake8" = "*"
 coverage = "*"
+"flake8" = "*"
 
 [requires]
 python_version = "3.6"
