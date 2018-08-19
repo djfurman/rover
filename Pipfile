@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 requests = "*"
+aws-xray-sdk = "*"
 
 [dev-packages]
 behave = "*"
@@ -14,3 +15,6 @@ coverage = "*"
 
 [requires]
 python_version = "3.6"
+
+[pipenv]
+allow_prereleases = true
