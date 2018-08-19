@@ -20,7 +20,8 @@ phases:
       - rm -rf features
 artifacts:
   files:
-    - '*.py'
-    - '**/*'
-    - code_coverage.txt
-    - test_results.json
+    - '**/*'  # Just grabs everything
+    # This was an attempt to not grab the general non-executing project files
+    # - '*.py'
+    # - code_coverage.txt
+    # - test_results.json
