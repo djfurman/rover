@@ -15,14 +15,14 @@ def step_impl(context):
 
 @then(u'that status code should be "{status_code}"')
 def step_impl(context, status_code):
-    assert context.response.status_code == 200
+    assert context.response.get("status_code") == 200
 
 
 @then(u"a json object should be returned")
 def step_impl(context):
-    assert type(context.response.json()) == type(dict())
+    assert type(context.response) == type(dict())
 
 
 @then(u"login should equal the github user")
 def step_impl(context):
-    assert context.response.json().get("login") == context.github_username
+    assert context.response["body"].get("login") == context.github_username
