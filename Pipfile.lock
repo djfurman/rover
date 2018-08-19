@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4e85e9927bcf0958fe9c66db45e760b446701a0f4ca98443b02ba8679ffd5b55"
+            "sha256": "4f9e45e35e011d982a34e901d5a226732b86e196d1f48f50e0c5c608cb52e509"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,14 @@
         ]
     },
     "default": {
+        "aws-xray-sdk": {
+            "hashes": [
+                "sha256:8b2bd76b42a14f48e9bc35c64864a00f30fc5e482000ad64d67454f8316f3639",
+                "sha256:8ec3c6c82e76c03799ec209ed59642d78f62218db6a430f7e2d20491cac3c5ef"
+            ],
+            "index": "pypi",
+            "version": "==1.1.2"
+        },
         "certifi": {
             "hashes": [
                 "sha256:4c1d68a1408dd090d2f3a869aa94c3947cc1d967821d1ed303208c9f41f0f2f4",
@@ -30,12 +38,24 @@
             ],
             "version": "==3.0.4"
         },
+        "future": {
+            "hashes": [
+                "sha256:e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb"
+            ],
+            "version": "==0.16.0"
+        },
         "idna": {
             "hashes": [
                 "sha256:156a6814fb5ac1fc6850fb002e0852d56c0c8d2531923a51032d1b70760e186e",
                 "sha256:684a38a6f903c1d71d6d5fac066b58d7768af4de2b832e426ec79c30daa94a16"
             ],
             "version": "==2.7"
+        },
+        "jsonpickle": {
+            "hashes": [
+                "sha256:545b3bee0d65e1abb4baa1818edcc9ec239aa9f2ffbfde8084d71c056180054f"
+            ],
+            "version": "==0.9.6"
         },
         "requests": {
             "hashes": [
@@ -52,6 +72,12 @@
             ],
             "markers": "python_version != '3.2.*' and python_version != '3.1.*' and python_version >= '2.6' and python_version != '3.0.*' and python_version < '4' and python_version != '3.3.*'",
             "version": "==1.23"
+        },
+        "wrapt": {
+            "hashes": [
+                "sha256:d4d560d479f2c21e1b5443bbd15fe7ec4b37fe7e53d335d3b9b0a7b1226fe3c6"
+            ],
+            "version": "==1.10.11"
         }
     },
     "develop": {
