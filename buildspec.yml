@@ -20,6 +20,7 @@ phases:
       - rm -rf features
 artifacts:
   files:
-    - '**/*.py'
+    - '*.py'
+    - '**/*'
     - code_coverage.txt
     - test_results.json
