@@ -10,7 +10,7 @@ phases:
       - export PATH=`pipenv --venv`/bin:$PATH
   build:
     commands:
-      - coverage run --omit features/steps/steps.py --source='.' -m behave --no-summary -f json > testResults.json
+      - coverage run --omit features/steps/steps.py --source='.' -m behave --no-summary -f json > test_results.json
   post_build:
     commands:
       - coverage report > code_coverage.txt
