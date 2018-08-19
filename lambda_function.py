@@ -3,7 +3,7 @@ from rover import rover
 
 
 def lambda_handler(event, context):
-    if "aws_request_id" not in context.keys():
+    if "aws_request_id" in context.keys():
         patch_all()
     response = rover(event["body"].get("username"))
     print(response.json())
